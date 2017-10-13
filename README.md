@@ -1,1 +1,1 @@
-# x86-Assembly-ATT
+Introductory exercises into x86 assembly (AT&T syntax) taken from Programming from the Ground Up by Jonathan Bartlett. Each exercise is ccompanied by .ppt slides created by me to help me visualize the stack and register values. 
