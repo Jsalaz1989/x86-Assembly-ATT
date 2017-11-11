@@ -25,24 +25,24 @@
 
 
 .section .bss
-.equ BUFFER_SIZE, 500			            # buffer size = 500 bytes
-.lcomm BUFFER_DATA, BUFFER_SIZE	      # actual buffer
+.equ BUFFER_SIZE, 500			    	# buffer size = 500 bytes
+.lcomm BUFFER_DATA, BUFFER_SIZE			# actual buffer
 
 .section .text
 
 # stack positions: where in the stack to find each piece of data
-.equ ST_SIZE_RESERVE, 8		    # buffer size
-.equ ST_FD_IN, -4			        # input file descriptor
-.equ ST_FD_OUT, -8			      # output file descriptor
-.equ ST_ARGC, 0			          # number of arguments
-.equ ST_ARGV_0, 4			        # name of program
-.equ ST_ARGV_1, 8			        # input file name
-.equ ST_ARGV_2, 12			      # output file name
+.equ ST_SIZE_RESERVE, 8		    	# buffer size
+.equ ST_FD_IN, -4			# input file descriptor
+.equ ST_FD_OUT, -8			# output file descriptor
+.equ ST_ARGC, 0			        # number of arguments
+.equ ST_ARGV_0, 4			# name of program
+.equ ST_ARGV_1, 8			# input file name
+.equ ST_ARGV_2, 12			# output file name
 
 .globl _main
 _main:
   ### INITIALIZE PROGRAM ###
-  movl %esp, %ebp				            # save stack pointer
+  movl %esp, %ebp			    # save stack pointer
   subl $ST_SIZE_RESERVE, %esp		    # allocate space on stack for file descriptors	
 
 open_files:
