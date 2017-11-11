@@ -49,24 +49,24 @@ open_files:
 
 open_fd_in:
   ### OPEN INPUT FILE ###
-  movl $SYS_OPEN, %eax		            # open input file (syscall 5) 
-  movl ST_ARGV_1(%ebp), %ebx	        # input filename from command line into %ebx (%ebx now contains
+  movl $SYS_OPEN, %eax		      # open input file (syscall 5) 
+  movl ST_ARGV_1(%ebp), %ebx	      # input filename from command line into %ebx (%ebx now contains
                                       # pointer in the stack to null-terminated string)
-  movl $O_RDONLY, %ecx		            # read-only flag
-  movl $0666, %edx	  	              # permissions when creating file (this doesn’t really matter 
+  movl $O_RDONLY, %ecx		      # read-only flag
+  movl $0666, %edx	  	      # permissions when creating file (this doesn’t really matter 
                                       # for reading)
-  int $LINUX_SYSCALL		              # execute system call
+  int $LINUX_SYSCALL		      # execute system call
                                       # Linux returns file descriptor in %eax
 
 store_fd_in:				
-  movl %eax, ST_FD_IN(%ebp)	          # transfer file descriptor from %eax
-				                              # to its appropriate place in the stack
+  movl %eax, ST_FD_IN(%ebp)	      # transfer file descriptor from %eax
+				      # to its appropriate place in the stack
 open_fd_out:
   ### OPEN OUTPUT FILE ###
-  movl $SYS_OPEN, %eax		            # open output file (syscall 5) 
-  movl ST_ARGV_2(%ebp), %ebx	        # output filename from command line into %ebx (%ebx now contains
+  movl $SYS_OPEN, %eax		      # open output file (syscall 5) 
+  movl ST_ARGV_2(%ebp), %ebx	      # output filename from command line into %ebx (%ebx now contains
                                       # pointer in the stack to null-terminated string)
-  movl $O_CREAT_WRONLY_TRUNC, %ecx	  # write-only flag
+  movl $O_CREAT_WRONLY_TRUNC, %ecx	# write-only flag
   movl $0666, %edx		                # permissions when creating file:
                                       # write-only, create-if-doesn’t-exist, 
                                       # truncate-if-doesn’t-exist
