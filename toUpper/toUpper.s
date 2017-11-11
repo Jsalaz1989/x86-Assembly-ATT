@@ -18,7 +18,7 @@
 
 .equ LINUX_SYSCALL, 0x80		    # system call interrupt
 
-.equ END_OF_FILE, 0			        # return value of read, meaning we’ve hit end of file
+.equ END_OF_FILE, 0			    # return value of read, meaning we’ve hit end of file
 
 .equ NUMBER_ARGUMENTS, 2
 
