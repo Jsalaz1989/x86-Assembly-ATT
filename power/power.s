@@ -1,4 +1,4 @@
-.code32
+.code32					# needed for gdb debugging
 
 .section .data				# starting with period means assembler
 					# instructions and not machine code
