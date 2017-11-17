@@ -1,3 +1,4 @@
+.code32
 
 .section .data				# starting with period means assembler
 					# instructions and not machine code
@@ -6,9 +7,8 @@
 
 
 
-.globl _main				# tell program to start at _start
-_main:
-	movl %esp, %ebp       		#for correct debugging
+.globl _start				# tell program to start at _start
+_start:
 	pushl $3			# push 2nd argument
 	pushl $2			# push 1st argument
 	call power			# call the function
