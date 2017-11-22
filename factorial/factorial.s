@@ -2,8 +2,8 @@
 
 .section .text
 
-.globl _main
-_main:
+.globl _start
+_start:
 	movl %esp, %ebp         # for correct debugging
 	push $4		    	# one argument only
 	call factorial	        # run the factorial function
