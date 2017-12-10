@@ -20,7 +20,7 @@ output_file_name:
 .section .text
 .globl _start
 _start:
-movl %esp, %ebp		# save stack pointer
+movl %esp, %ebp			# save stack pointer
 subl $8, %esp			# allocate space for local variables
 
 # Open file for reading
