@@ -33,29 +33,26 @@ _start:
 
 	movl %eax, ST_INPUT_DESCRIPTOR(%ebp)	# store the input file descriptor away
 	
-	#This will test and see if %eax is
-92
-Chapter 7. Developing Robust Programs
-#negative. If it is not negative, it
-#will jump to continue_processing.
-#Otherwise it will handle the error
-#condition that the negative number
-#represents.
-cmpl $0, %eax
-jl continue_processing
-#Send the error
-.section .data
-no_open_file_code:
-.ascii "0001: \0"
-no_open_file_msg:
-.ascii "Can’t Open Input File\0"
-.section .text
-pushl $no_open_file_msg
-pushl $no_open_file_code
-call error_exit
-continue_processing:
-#Rest of program
+	# This will test and see if %eax is negative. 
+	# If it is not negative, it will jump to continue_processing.
+	# Otherwise it will handle the error condition that the negative number represents.
+	cmpl $0, %eax
+	jl continue_processing
 
+	#Send the error
+	.section .data
+no_open_file_code:
+	.ascii "0001: \0"
+no_open_file_msg:
+	.ascii "Can’t Open Input File\0"
+
+	.section .text
+	pushl $no_open_file_msg
+	pushl $no_open_file_code
+	call error_exit
+
+continue_processing:
+	
 	# Open file for writing
 	movl $SYS_OPEN, %eax			# prepare syscall 5 
 	movl $output_file_name, %ebx		# move output file name into %ebx
