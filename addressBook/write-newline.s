@@ -17,8 +17,8 @@ write_newline:
 	movl $newline, %ecx
 	movl $1, %edx
 	int $LINUX_SYSCALL		# execute system call,
-							# sys_write returns # bytes written in %eax
+					# sys_write returns # bytes written in %eax
 
 	movl %ebp, %esp
 	popl %ebp			# restore base pointer
-	ret					# pop %eip
+	ret				# pop %eip
