@@ -37,7 +37,7 @@ _start:
 	# If it is not negative, it will jump to continue_processing.
 	# Otherwise it will handle the error condition that the negative number represents.
 	cmpl $0, %eax
-	jl continue_processing
+	jg continue_processing			# in AT&T syntax, jg means eax > 0 ?
 
 	#Send the error
 	.section .data
