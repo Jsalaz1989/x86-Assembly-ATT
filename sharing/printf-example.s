@@ -1,7 +1,7 @@
     .section .data
 
 firststring:		# the “format string” (1st parameter) tells printf the number and type of paramenters
-    .ascii “Hello! %s is a %s who loves the number %d\n\0”
+    .ascii "Hello! %s is a %s who loves the number %d\n\0"
 name:
     .ascii "Jonathan\0"
 personstring:
