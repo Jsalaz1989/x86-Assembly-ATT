@@ -14,8 +14,8 @@ numberloved:
 _start:
     # Parameters are passed in reverse order than listed in the function’s prototype
     pushl numberloved 		    # this is the %d
-    pushl $personstring 		# this is the second %s
-    pushl $name 		        # this is the first %s
+    pushl $personstring 	# this is the second %s
+    pushl $name 		    # this is the first %s
     pushl $firststring 		    # this is the format string in the prototype
 
     call printf
