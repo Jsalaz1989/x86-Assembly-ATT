@@ -30,9 +30,9 @@ conversion_loop:
     # Quotient is in %eax
     # Remainder in %edx, which now needs to be converted into a number. 
     # 	So, %edx has a number 0 – 9, an index on the ASCII table 
-    # 	e.g. ascii ’0’ + integer 0 = ascii ’0’
-    #	e.g. ascii ’0’ + integer 1 = ascii ’1’
-    addl $’0’, %edx		# gives us character for the number stored in %edx
+    # 	e.g. ascii '0' + integer 0 = ascii '0'
+    #	e.g. ascii '0' + integer 1 = ascii '1'
+    addl $'0', %edx		# gives us character for the number stored in %edx
 
     # Push this value on the stack. When we are done, we can pop off the characters one-by-
     # one and they  will be in the right order. 
