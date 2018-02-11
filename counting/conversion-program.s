@@ -25,7 +25,7 @@ _start:
     call count_chars
     addl $4, %esp
 
-    movl %eax, %edx		    # the count goes in %edx for SYS_WRITE
+    movl %eax, %edx		  # the count goes in %edx for SYS_WRITE
 
     # Make the system call
     movl $SYS_WRITE, %eax
