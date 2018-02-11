@@ -4,7 +4,7 @@
 
     # This is where it will be stored
     tmp_buffer:
-    .ascii "\0\0\0\0\0\0\0\0\0\0\0“		# 11 null bytes
+    .ascii "\0\0\0\0\0\0\0\0\0\0\0"		# 11 null bytes
 
     .section .text
 
