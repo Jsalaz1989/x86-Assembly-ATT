@@ -17,7 +17,8 @@ integer2string:
 
     movl ST_VALUE(%ebp), %eax		# move the value into position
 
-    movl $10, %edi			# to divide by 10, the 10 must be in a 					# register or memory location
+    movl $10, %edi			# to divide by 10, the 10 must be in a 					
+                            # register or memory location
 
 conversion_loop:
     # Division is performed on the combined %edx:%eax register, 
