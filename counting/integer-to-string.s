@@ -18,14 +18,14 @@ integer2string:
     movl ST_VALUE(%ebp), %eax		# move the value into position
 
     movl $10, %edi			# to divide by 10, the 10 must be in a 					
-                            # register or memory location
+                                # register or memory location
 
 conversion_loop:
     # Division is performed on the combined %edx:%eax register, 
     movl $0, %edx		# so first clear out %edx
 
     # Store the quotient in %eax, remainder in %edx (both are implied)
-    divl %edi		# divide %edx:%eax (which are implied) by 10
+    divl %edi		    # divide %edx:%eax (which are implied) by 10
 
     # Quotient is in %eax
     # Remainder in %edx, which now needs to be converted into a number. 
@@ -40,7 +40,7 @@ conversion_loop:
     # byte of the %edx register) for the character.
     pushl %edx
 
-    incl %ecx		# increment the digit count
+    incl %ecx		    # increment the digit count
 
     cmpl $0, %eax		# check if %eax is zero yet, go to next step if so.
 
