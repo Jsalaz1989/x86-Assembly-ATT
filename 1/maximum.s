@@ -1,3 +1,6 @@
+# Returns in EBX the largest value (222) from an array
+
+
 	.section .data			# starting with period means assembler
 					# instructions and not machine code
 data_items:
